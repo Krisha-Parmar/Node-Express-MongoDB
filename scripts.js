@@ -15,7 +15,18 @@ fs.copyFile("hello.txt","./copy/copy1.txt",function(err){
     if(err) console.error(err);
     else console.log("done")
 })
-fs.copyFile("hello.txt","./copy2/copy1.txt",function(err){
-    if(err) console.error(err.message);
-    else console.log("done")
+//throw an error
+// fs.copyFile("hello.txt","./copy2/copy1.txt",function(err){
+//     if(err) console.error(err.message);
+//     else console.log("done")
+// })
+
+fs.unlink("hello.txt",function(err){
+    if(err) console.error(err)
+    else console.log("removed");
+})
+
+fs.rm("./copy",{recursive: true},(err)=>{
+    if(err) console.error(err)
+    else console.log("removed folder");
 })
