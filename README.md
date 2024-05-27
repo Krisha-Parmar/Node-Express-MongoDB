@@ -16,7 +16,7 @@
 <p>scripts => in scripts add coustom scripts and add default scripts PATH</p><br>
 <h2>For install any package from npm: npm i package_name <br> for particular:npm i package_name@version </h2><br>
 <h2>For uninstall any package from npm: npm uninstall package_name</h2><br>
-<p>installed and uninstall package will be see in package.json dependencies</p><br>
+<p>installed and uninstall package will be see in package.json dependencies.</p><br>
 <h3>node_modules</h3><br><p>dependencies`s dependencies</p><br>
 # FileSystem methods
 <p>https://nodejs.org/docs/latest/api/fs.html#fswritefilefile-data-options-callback<br>https://nodejs.org/docs/latest/api/fs.html#fsappendfilepath-data-options-callback<br>https://nodejs.org/docs/latest/api/fs.html#fsrenameoldpath-newpath-callback<br>https://nodejs.org/docs/latest/api/fs.html#fscopyfilesrc-dest-mode-callback<br>https://nodejs.org/docs/latest/api/fs.html#fsunlinkpath-callback<br>https://nodejs.org/docs/latest/api/fs.html#fsrmpath-options-callback<br>https://nodejs.org/docs/latest/api/fs.html#fsmkdirpath-options-callback<br>https://nodejs.org/docs/latest/api/fs.html#fsreadfilepath-options-callback<br>https://nodejs.org/docs/latest/api/fs.html#fsreaddirpath-options-callback<br></p>
