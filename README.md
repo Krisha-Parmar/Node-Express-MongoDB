@@ -48,18 +48,20 @@ server.listen(3000);</pre>
 <p>working:- get()=>use(,next())=>get(work)</p> 
 
 # cookies and sessions
-<h3><b>Cookies<b><br>
-Cookies are small pieces of data stored on the client-side (in the browser). They are sent back to the server with each request to maintain state.<br><b>Sessions<b><br>
-Sessions store data on the server side and use a session identifier (usually stored in a cookie) to link the client to the session data on the server.<h3>
+<b>Cookies<br><b>
+<p>Cookies are small pieces of data stored on the client-side (in the browser). They are sent back to the server with each request to maintain state.</p><br><b>Sessions<b><br>
+<p>Sessions store data on the server side and use a session identifier (usually stored in a cookie) to link the client to the session data on the server.</p>
 <pre>
 app.use(express.json());
--Function: Parses JSON-formatted request bodies.
--Use Case: API requests with JSON payloads.<br>
-app.use(express.urlencoded({extended:true}));\
--Function: Parses URL-encoded request bodies.
--Use Case: Form submissions or requests with URL-encoded data.
--extended: true: Uses the qs library to parse more complex objects.<br> </pre>
-
+app.use(express.urlencoded({extended:true}));
+<br> </pre>
+<p>app.use(express.json());<br>
+-Function: Parses JSON-formatted request bodies.<br>
+-Use Case: API requests with JSON payloads.<br><br>
+app.use(express.urlencoded({extended:true}));<br>
+-Function: Parses URL-encoded request bodies.<br>
+-Use Case: Form submissions or requests with URL-encoded data.<br>
+-extended: true: Uses the qs library to parse more complex objects.<br></p>
 
 
 
