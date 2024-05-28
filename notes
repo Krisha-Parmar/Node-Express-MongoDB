@@ -1,7 +1,88 @@
 what is node.js?
 
-Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more. Node.js runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting. 
+Node.js is a cross-platform, open-source JavaScript runtime environment that can run on Windows, Linux, Unix, macOS, and more.
+Node.js runs on the V8 JavaScript engine, and executes JavaScript code outside a web browser.
+Node.js lets developers use JavaScript to write command line tools and for server-side scripting.
 
-what is npm?
+What is npm?
 
 npm is the default package manager for the JavaScript runtime environment Node.js and is included as a recommended feature in the Node.js installer.
+
+
+Gives diffrent package
+
+
+npm init => package.json =>details of projects
+
+
+module => node js code already install
+
+
+package => download from npm
+
+
+dependencies => package and package`s dependencies
+
+
+devdependencies => use only that time when we make an app or any project but after deploy of that project we not use that : npm i nodemon --save-dev
+
+
+scripts => in scripts add coustom scripts and add default scripts PATH
+
+
+For install any package from npm: npm i package_name
+for particular:npm i package_name@version
+
+For uninstall any package from npm: npm uninstall package_name
+
+installed and uninstall package will be see in package.json dependencies.
+
+
+node_modules
+
+dependencies`s dependencies
+
+
+# FileSystem methods
+https://nodejs.org/docs/latest/api/fs.html#fswritefilefile-data-options-callback
+https://nodejs.org/docs/latest/api/fs.html#fsappendfilepath-data-options-callback
+https://nodejs.org/docs/latest/api/fs.html#fsrenameoldpath-newpath-callback
+https://nodejs.org/docs/latest/api/fs.html#fscopyfilesrc-dest-mode-callback
+https://nodejs.org/docs/latest/api/fs.html#fsunlinkpath-callback
+https://nodejs.org/docs/latest/api/fs.html#fsrmpath-options-callback
+https://nodejs.org/docs/latest/api/fs.html#fsmkdirpath-options-callback
+https://nodejs.org/docs/latest/api/fs.html#fsreadfilepath-options-callback
+https://nodejs.org/docs/latest/api/fs.html#fsreaddirpath-options-callback
+
+HTTP
+protocal => rules
+
+http protocal
+
+not possible any connection between user to server and server to user
+
+
+HTTP create server
+https://nodejs.org/docs/latest/api/http.html#httpcreateserveroptions-requestlistener
+
+const http = require('http');
+const server = http.createServer((req,res)=>{
+res.end("hello world!!");
+})
+
+
+server.listen(3000);
+
+express.js
+exprees js is npm package
+
+Framework : work with flow , express js is framework
+manage everuthing from receiving the response and giving the response
+Middleware -> laptop(image) =>=> ||Middleware(somework)|| =>=> (server)Router
+app.use(function(req,res,next)) 
+use() => all req first through this , before router this use will be work
+
+
+next() => after work of use , next for that req accept by routers
+
+working:- get()=>use(,next())=>get(work)
