@@ -36,6 +36,18 @@ const server = http.createServer((req,res)=>{
 
 server.listen(3000);</pre>
 
+# express.js
+
+<h3>exprees js is npm package</h3>
+<br>
+<h3>Framework : work with flow , express js is framework<br> manage everuthing from receiving the response and giving the response<br>Middleware ->    laptop(image) =>=> ||Middleware(somework)|| =>=> (server)Router<br>
+</h3>
+<pre>app.use(function(req,res,next)) </pre>
+<p>use() => all req first through this , before router this use will be work</p><br>
+<p>next() => after work of use , next for that req accept by routers </p>
+<p>working:- get()=>use(,next())=>get(work)</p> 
+
+
 
 
 

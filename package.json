@@ -7,11 +7,11 @@
     "start": "hello world i am start scripts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "file": "node scripts.js"
-
   },
   "author": "krisha",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.19.2",
     "one-liner-joke": "^1.2.2"
   },
   "devDependencies": {
