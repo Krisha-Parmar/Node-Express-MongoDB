@@ -50,11 +50,11 @@ server.listen(3000);</pre>
 # cookies and sessions
 <b>Cookies<br><b>
 <p>Cookies are small pieces of data stored on the client-side (in the browser). They are sent back to the server with each request to maintain state.</p><br><b>Sessions<b><br>
-<p>Sessions store data on the server side and use a session identifier (usually stored in a cookie) to link the client to the session data on the server.</p>
+<p>Sessions store data on the server side and use a session identifier (usually stored in a cookie) to link the client to the session data on the server.</p><br>
 <pre>
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-<br> </pre>
+ </pre>
 <p>app.use(express.json());<br>
 -Function: Parses JSON-formatted request bodies.<br>
 -Use Case: API requests with JSON payloads.<br><br>
@@ -62,6 +62,26 @@ app.use(express.urlencoded({extended:true}));<br>
 -Function: Parses URL-encoded request bodies.<br>
 -Use Case: Form submissions or requests with URL-encoded data.<br>
 -extended: true: Uses the qs library to parse more complex objects.<br></p>
+
+<br>
+<p>ejs : frontend look , dynamic and calculation perform, similar to html</p>
+<br><br>
+
+# Setup ejs
+<br>
+<p>index.js(app.set('view engine','ejs') => create views folder => in views create index.ejs => for public folder add path in index.js use path.join(_dirname,'public') and create public folder => in public folder create 3 folder 1.stylesheets 2.images 3.javascripts => add path in index.ejs but after public ex. /javascrpits/script.js => javascripts hoin using scripts and css using link. )</p><br>
+
+# dynamic routing
+<pre>app.get("/profile/:username",function(req,res){
+    res.send("chal raha hai");
+});</pre>
+
+<br>
+<p>using this : , get(_) , _ convert to a variable, and this route is dynamic </p><br>
+<pre>req.params.username</pre>
+<br>
+<p>: => req.params</p>
+
 
 
 
