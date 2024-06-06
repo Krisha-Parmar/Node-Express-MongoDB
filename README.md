@@ -52,6 +52,7 @@ server.listen(3000);</pre>
 <p>Cookies are small pieces of data stored on the client-side (in the browser). They are sent back to the server with each request to maintain state.</p><br><b>Sessions<b><br>
 <p>Sessions store data on the server side and use a session identifier (usually stored in a cookie) to link the client to the session data on the server.</p><br>
 <pre>
+<p>parsers form</p>
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
  </pre>
