@@ -49,7 +49,7 @@ server.listen(3000);</pre>
 
 # cookies and sessions
 <b>Cookies<br><b>
-<p>Cookies are small pieces of data stored on the client-side (in the browser). They are sent back to the server with each request to maintain state.</p><br><b>Sessions<b><br>
+<p>Cookies are small pieces of data stored on the client-side (in the browser). They are sent back to the server with each request to maintain state.</p><br><br>Sessions<br><br>
 <p>Sessions store data on the server side and use a session identifier (usually stored in a cookie) to link the client to the session data on the server.</p><br>
 <pre>
 <p>parsers form</p>
@@ -81,7 +81,33 @@ app.use(express.urlencoded({extended:true}));<br>
 <p>using this : , get(_) , _ convert to a variable, and this route is dynamic </p><br>
 <pre>req.params.username</pre>
 <br>
-<p>: => req.params</p>
+<p>: => req.params</p></br>
+
+# MongoDB
+
+<h3>Data Storage:</h3></br><p>That space we can store users infomation(database)</p></br>
+<h3>Types of Databases:</h3></br><p>SQL | NoSQL(not only sql)</p></br>
+<p>SQL : data store in tables(we can understand data in form of tables)</p></br>
+<p>NoSQL : data stores in object way</p></br>
+<p>Mongodb: NoSQL based database</p></br>
+</br>
+<p>How many servers in backend?</p></br>
+<p>Two servers: 1. Application Server   2. DataBase server</p></br>
+<p>1. Application Server : That handles routes and accept request (AS <-> DBS)</p></br>
+
+</br>
+<p>in our A project we have Users data so we have User collection of A, means A project `s database ans in that A project identity that are collections.  </p></br>
+<p>In user collection we want one user data that called Document</p></br>
+<pre>CODE                  DATABASE
+---------------------------------------------
+    mongoose.connect  ->  Database create
+    model create      ->  Collection
+    CREATE code       ->  document  </pre>
+
+
+
+
+
 
 
 
