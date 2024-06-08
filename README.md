@@ -149,7 +149,6 @@ app.get("/read",async (req,res)=>{
     let users = await userModel.find(); // --> for all users
     // let users = await userModel.find({username: "krisha parmar"});// if no user that name give []-->give array
     // let users = await userModel.findOne({username: "krisha parmar"});// if no user that name give blank--give object
-
     res.send(users)
 })
 
