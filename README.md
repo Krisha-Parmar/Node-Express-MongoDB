@@ -92,9 +92,9 @@ app.use(express.urlencoded({extended:true}));<br>
 <p>Mongodb: NoSQL based database</p></br>
 
 <p>How many servers in backend?</p>
-<p>Two servers: 1. Application Server   2. DataBase server</p></br>
-<p>1. Application Server : That handles routes and accept request (AS <-> DBS)</p></br>
-<p>in our A project we have Users data so we have User collection of A, means A project `s database ans in that A project identity that are collections.  </p></br>
+<p>Two servers: 1. Application Server   2. DataBase server</p>
+<p>1. Application Server : That handles routes and accept request (AS <-> DBS)</p>
+<p>in our A project we have Users data so we have User collection of A, means A project `s database ans in that A project identity that are collections.  </p>
 <p>In user collection we want one user data that called Document</p>
 <pre>CODE                  DATABASE
 ---------------------------------------------
@@ -112,9 +112,9 @@ app.use(express.urlencoded({extended:true}));<br>
     })
     
 })</pre>
-<p>Asyncronise code in =>{_} </p></br>
-<p>"_id": "6663eb813d4be0ec2311d020",</p></br>
-<p>6663eb : time stamp</p></br>
+<p>Asyncronise code in =>{_} </p>
+<p>"_id": "6663eb813d4be0ec2311d020"</p>
+<p>6663eb : time stamp</p>
 <h1>CRUD Operations</h1>
 <p>usermodel.js</p></br>
 <pre> const mongoose = require('mongoose');
