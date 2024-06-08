@@ -86,11 +86,12 @@ app.use(express.urlencoded({extended:true}));<br>
 # MongoDB
 
 <h3>Data Storage:</h3><p>That space we can store users infomation(database)</p></br>
-<h3>Types of Databases:</h3><p>SQL | NoSQL(not only sql)</p></br>
-<p>SQL : data store in tables(we can understand data in form of tables)</p></br>
-<p>NoSQL : data stores in object way</p></br>
+<h3>Types of Databases:</h3><p>SQL | NoSQL(not only sql)</p>
+<p>SQL : data store in tables(we can understand data in form of tables)</p>
+<p>NoSQL : data stores in object way</p>
 <p>Mongodb: NoSQL based database</p></br>
-<p>How many servers in backend?</p></br>
+
+<p>How many servers in backend?</p>
 <p>Two servers: 1. Application Server   2. DataBase server</p></br>
 <p>1. Application Server : That handles routes and accept request (AS <-> DBS)</p></br>
 <p>in our A project we have Users data so we have User collection of A, means A project `s database ans in that A project identity that are collections.  </p></br>
