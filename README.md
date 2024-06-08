@@ -102,7 +102,73 @@ app.use(express.urlencoded({extended:true}));<br>
 ---------------------------------------------
     mongoose.connect  ->  Database create
     model create      ->  Collection
-    CREATE code       ->  document  </pre>
+    CREATE code       ->  document  </pre><br/>
+<p>ORM : Object Relational Mapping<br/>ODM : Object Document Mapping</p></br>
+<p>mongoose code => Asyncronise code</p></br>
+<p>mongoose.Schema()=>that accept object=>mongoose.Schema({})</p></br>
+<pre>app.get('/create',(req,res)=> {
+    useModel.create({
+        name: "krishi",
+        email: "xyz@gmail.com",
+        username: "krishi"
+    })
+    
+})</pre></br><p>Asyncronise code in =>{_} </p></br>
+<p>"_id": "6663eb813d4be0ec2311d020",</p></br>
+<p>6663eb : time stamp</p></br>
+
+<h1>CRUD Operations</h1>
+
+<p>usermodel.js</p></br>
+<pre> const mongoose = require('mongoose');
+mongoose.connect('mongodb://127.0.0.1:27017/mongopractice');
+const userSchema = mongoose.Schema({
+    name: String,
+    username: String,
+    email: String
+})
+
+module.exports = mongoose.model("user",userSchema); </pre><br/>
+<p>app.js</p></br>
+<pre> const express = require('express');
+const app = express();
+
+const userModel = require('./usermodel');
+
+app.get('/',(req,res)=> {
+    res.send("hey");
+})
+
+app.get('/create',async (req,res)=> {
+    let createduser = await userModel.create({
+        name: "krishi parmar",
+        email: "xyz@gmail.com",
+        username: "krisha parmar"
+    })
+    res.send(createduser);
+})
+
+app.get("/read",async (req,res)=>{
+    let users = await userModel.find(); // --> for all users
+    // let users = await userModel.find({username: "krisha parmar"});// if no user that name give []-->give array
+    // let users = await userModel.findOne({username: "krisha parmar"});// if no user that name give blank--give object
+
+    res.send(users)
+})
+
+app.get('/update',async (req,res)=> {
+    let updateduser = await userModel.findOneAndUpdate({username: "krishi"},{name: "krishaaa"},{new: true})
+    res.send(updateduser);
+})
+
+app.get('/delete',async (req,res)=> {
+    let users = await userModel.findOneAndDelete({username: "krishi"});
+    res.send(users);
+})
+
+
+app.listen(3000); </pre><br/>
+
 
 
 
