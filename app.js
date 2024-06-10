@@ -1,37 +1,45 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+const userModel = require('./models/user')
 
-const userModel = require('./usermodel');
+app.set("view engine","ejs")
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(express.static(path.join(__dirname,'public')));
+
 
 app.get('/',(req,res)=> {
-    res.send("hey");
+    res.render("index");
 })
+app.get('/read', async (req,res)=> {
+    let users =  await userModel.find();
+    res.render("read",{users});
+})
+app.post('/create', async (req,res)=> {
 
-app.get('/create',async (req,res)=> {
+    let {name, email, image} = req.body
+
     let createduser = await userModel.create({
-        name: "krishi parmar",
-        email: "xyz@gmail.com",
-        username: "krisha parmar"
-    })
-    res.send(createduser);
+        name,
+        email,
+        image
+    });
+    // res.send(createduser);
+    res.redirect("/read")
 })
-
-app.get("/read",async (req,res)=>{
-    let users = await userModel.find(); // --> for all users
-    // let users = await userModel.find({username: "krisha parmar"});// if no user that name give []-->give array
-    // let users = await userModel.findOne({username: "krisha parmar"});// if no user that name give blank--give object
-
-    res.send(users)
+app.get('/edit/:userid', async (req,res)=> {
+    let user =  await userModel.findOne({_id: req.params.userid });
+    res.render("edit",{user});
 })
-
-app.get('/update',async (req,res)=> {
-    let updateduser = await userModel.findOneAndUpdate({username: "krishi"},{name: "krishaaa"},{new: true})
-    res.send(updateduser);
+app.get('/delete/:id', async (req,res)=> {
+    let users =  await userModel.findOneAndDelete({_id: req.params.id});
+    res.redirect("/read");
 })
-
-app.get('/delete',async (req,res)=> {
-    let users = await userModel.findOneAndDelete({username: "krishi"});
-    res.send(users);
+app.post('/update/:userid', async (req,res)=> {
+    let {image,name,email} = req.body;
+    let user =  await userModel.findOneAndUpdate({_id: req.params.userid},{image,name,email},{new:true});
+    res.redirect("/read");
 })
 
 
