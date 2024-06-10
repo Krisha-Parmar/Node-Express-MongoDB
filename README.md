@@ -85,27 +85,25 @@ app.use(express.urlencoded({extended:true}));<br>
 
 # MongoDB
 
-<h3>Data Storage:</h3></br><p>That space we can store users infomation(database)</p></br>
-<h3>Types of Databases:</h3></br><p>SQL | NoSQL(not only sql)</p></br>
-<p>SQL : data store in tables(we can understand data in form of tables)</p></br>
-<p>NoSQL : data stores in object way</p></br>
+<h3>Data Storage:</h3><p>That space we can store users infomation(database)</p></br>
+<h3>Types of Databases:</h3><p>SQL | NoSQL(not only sql)</p>
+<p>SQL : data store in tables(we can understand data in form of tables)</p>
+<p>NoSQL : data stores in object way</p>
 <p>Mongodb: NoSQL based database</p></br>
-</br>
-<p>How many servers in backend?</p></br>
-<p>Two servers: 1. Application Server   2. DataBase server</p></br>
-<p>1. Application Server : That handles routes and accept request (AS <-> DBS)</p></br>
 
-</br>
-<p>in our A project we have Users data so we have User collection of A, means A project `s database ans in that A project identity that are collections.  </p></br>
-<p>In user collection we want one user data that called Document</p></br>
+<p>How many servers in backend?</p>
+<p>Two servers: 1. Application Server   2. DataBase server</p>
+<p>1. Application Server : That handles routes and accept request (AS <-> DBS)</p>
+<p>in our A project we have Users data so we have User collection of A, means A project `s database ans in that A project identity that are collections.  </p>
+<p>In user collection we want one user data that called Document</p>
 <pre>CODE                  DATABASE
 ---------------------------------------------
     mongoose.connect  ->  Database create
     model create      ->  Collection
-    CREATE code       ->  document  </pre><br/>
+    CREATE code       ->  document  </pre>
 <p>ORM : Object Relational Mapping<br/>ODM : Object Document Mapping</p></br>
 <p>mongoose code => Asyncronise code</p></br>
-<p>mongoose.Schema()=>that accept object=>mongoose.Schema({})</p></br>
+<p>mongoose.Schema()=>that accept object=>mongoose.Schema({})</p>
 <pre>app.get('/create',(req,res)=> {
     useModel.create({
         name: "krishi",
@@ -113,12 +111,11 @@ app.use(express.urlencoded({extended:true}));<br>
         username: "krishi"
     })
     
-})</pre></br><p>Asyncronise code in =>{_} </p></br>
-<p>"_id": "6663eb813d4be0ec2311d020",</p></br>
-<p>6663eb : time stamp</p></br>
-
+})</pre>
+<p>Asyncronise code in =>{_} </p>
+<p>"_id": "6663eb813d4be0ec2311d020"</p>
+<p>6663eb : time stamp</p>
 <h1>CRUD Operations</h1>
-
 <p>usermodel.js</p></br>
 <pre> const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/mongopractice');
@@ -152,7 +149,6 @@ app.get("/read",async (req,res)=>{
     let users = await userModel.find(); // --> for all users
     // let users = await userModel.find({username: "krisha parmar"});// if no user that name give []-->give array
     // let users = await userModel.findOne({username: "krisha parmar"});// if no user that name give blank--give object
-
     res.send(users)
 })
 
