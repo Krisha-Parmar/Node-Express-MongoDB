@@ -184,8 +184,51 @@ app.get("/read",(req,res)=>{
 
 app.listen(3000);</pre>
 
+<h3>Using bcrypt encrypt data and decrypt data</h3>
+<p>Encryption</p>
+<pre>const express = require('express');
+const app = express();
+const bcrypt = require('bcrypt');
+
+
+app.get("/",(req,res)=>{
+    bcrypt.genSalt(10, function(err, salt) {
+        bcrypt.hash("krishi", salt, function(err, hash) {
+            console.log(hash);
+        });
+    });
+    
+})
+
+
+
+app.listen(3000);
+
+
+//hash->$2b$10$2fPppGL7ocZY3/HRMdwfS.BBm0Iz0CKI90T/eCEq5Ehqh0DyLvffO</pre>
+<p>Decryption</p>
+<pre>const express = require('express');
+const app = express();
+const bcrypt = require('bcrypt');
+
+
+app.get("/",(req,res)=>{
+    bcrypt.compare("krishi", "$2b$10$2fPppGL7ocZY3/HRMdwfS.BBm0Iz0CKI90T/eCEq5Ehqh0DyLvffO", function(err, result) {
+        console.log(result);
+    });
+    
+})
+
+
+
+app.listen(3000);
+// output -> true
+
+</pre>
+
+
 <br>
-<h3>data verify using jwt </h3>
+<h3>Data verify using jwt </h3>
 
 <pre>const express = require('express');
 const app = express();
