@@ -44,7 +44,7 @@ app.get("/login",function(req,res){
 app.post("/login",async function(req,res){
     let user= await userModel.findOne({email: req.body.email});
     if(!user) return res.send("Something is wrong!")
-    // console.log(user.password=>saved password when we create account, req.body.password=>in log in we enter password);
+    //console.log(user.password=>saved password when we create account, req.body.password=>in log in we enter password);
     bcrypt.compare(req.body.password,user.password,function(err,result){
         if(result) {
             
