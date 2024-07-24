@@ -165,6 +165,25 @@ app.get('/delete',async (req,res)=> {
 
 app.listen(3000); </pre><br/>
 
+<h3>how cookie read and set</h3>
+<p>to read cookie write <b>req</b> and to set cookie write <b>res</b></p>
+<pre>const cookieParser = require('cookie-parser');
+const express = require('express');
+const app = express();
+
+app.use(cookieParser());
+
+app.get("/",(req,res)=>{
+    res.cookie("name","krishiii");
+    res.send("done");
+})
+app.get("/read",(req,res)=>{
+    console.log(req.cookies);
+    res.send("read page");
+})
+
+app.listen(3000);</pre>
+
 
 
 
