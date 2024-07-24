@@ -206,7 +206,7 @@ app.listen(3000);
 
 
 //hash->$2b$10$2fPppGL7ocZY3/HRMdwfS.BBm0Iz0CKI90T/eCEq5Ehqh0DyLvffO</pre>
-<p>Decryption</p>
+<p>Decryption(we can`t do decryption tso we compare password`s hash and other hash)</p>
 <pre>const express = require('express');
 const app = express();
 const bcrypt = require('bcrypt');
