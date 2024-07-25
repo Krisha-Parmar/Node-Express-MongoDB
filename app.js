@@ -52,7 +52,7 @@ app.post("/login",async function(req,res){
             res.cookie("token",token);
             res.send("you can login");
         }
-        else res.send("something is wrong");
+        else res.send("something is wrong try again");
         
     });
     
