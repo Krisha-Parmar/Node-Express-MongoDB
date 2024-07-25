@@ -254,6 +254,9 @@ app.get("/read", function (req,res) {
 
 
 app.listen(3000);</pre>
+<br>
+<h4>ambadding: same data in two diffrent space(one of then is copy)-->data read fast but with high storage</h4>
+<h4>referancing: data with id </h4>
 
 
 
